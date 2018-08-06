@@ -49,7 +49,7 @@ class TrafficApp extends React.Component {
     // compara resultado y devuelve true o false
   }
   
-  _addToPatternUser() {
+  _addToPatternUser  () {
     console.log("congratulaciones has metido un onclick");
   }
  

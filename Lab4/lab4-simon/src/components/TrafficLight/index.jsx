@@ -18,11 +18,13 @@ const TrafficLight = ({
             color={color}
             size={size}
             isTurnedOn={color === turnedOnLight}
+            
           />
+          
         )
       )
     }
-    <div>hola men</div>
+   
   </div>
 );
 

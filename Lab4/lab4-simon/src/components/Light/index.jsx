@@ -2,11 +2,8 @@ import React from 'react';
 
 import './light.css';
 
-import TrafficApp from '../TrafficApp/index.jsx';
+//import TrafficApp from '../TrafficApp/index.jsx';
 
-_addToPatternUser() {
-  console.log("congratulaciones has metido un onclick");
-}
 
 
 const POSSIBLE_SIZES = [
@@ -32,7 +29,6 @@ const Light = ({
       background: color,
     }}
     onclick={
-      
       addToPatternUser()
     }
   />
