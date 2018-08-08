@@ -8,6 +8,7 @@ const TrafficLight = ({
   colors = ['red', 'yellow', 'green', 'blue'],
   turnedOnLight = 'red',
   size = 'medium',
+  selected = (info='')=>{console.log(info)}
 }) => (
   <div className="trafficLight">
     {
@@ -18,7 +19,7 @@ const TrafficLight = ({
             color={color}
             size={size}
             isTurnedOn={color === turnedOnLight}
-            
+            selected={selected}
           />
           
         )

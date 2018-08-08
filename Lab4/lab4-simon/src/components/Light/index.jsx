@@ -2,7 +2,7 @@ import React from 'react';
 
 import './light.css';
 
-//import TrafficApp from '../TrafficApp/index.jsx';
+import TrafficApp from '../TrafficApp';
 
 
 
@@ -16,8 +16,9 @@ const Light = ({
   isTurnedOn = false,
   color = 'red',
   size = 'medium',
+  selected = (info='')=>{console.log(info)}
 }) => (
-  <div
+  <button
     className={
       `
         light
@@ -28,8 +29,8 @@ const Light = ({
     style={{
       background: color,
     }}
-    onclick={
-      addToPatternUser()
+    onClick={
+     () => selected(color)
     }
   />
 );
