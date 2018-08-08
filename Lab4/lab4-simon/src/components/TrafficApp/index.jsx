@@ -27,7 +27,7 @@ class TrafficApp extends React.Component {
   }
 
   _changeLight() {
-    if (this.state.counter < 4){
+    if (this.state.counter < this.state.counterLimit){
       if(this.state.pattern.length <= this.state.counter){
         const {
           currentLight,
@@ -61,12 +61,34 @@ class TrafficApp extends React.Component {
   }
 
   _addToPatternUser =  (info) => {
-    console.log(info);
     this.state.patternUser.push(info);
-    console.log(this.state.patternUser);
-    this.state.playsCounter++;
-    console.log(this.state.playsCounter);
-    this._playPattern();
+    console.log(info);
+      this.state.playsCounter++;
+      console.log(this.state.playsCounter);
+     
+      console.log(this.state.patternUser);
+      
+      this._playPattern();
+    if(this.state.playsCounter > this.state.counterLimit-1){
+      const {
+        currentLight,
+        colors,
+        pattern,
+        counter,
+        counterLimit,
+        playsCounter,
+        turn,
+      } = this.state;
+      console.log("turno de simon");      
+      this.setState({
+        turn: 'simon',
+        counterLimit: counterLimit*2,
+      })
+      this._playPattern;
+    }else{
+      
+    }
+    
   }
 
   _compare() {
@@ -85,7 +107,7 @@ class TrafficApp extends React.Component {
   _playPattern() {
     //for(let i=0; i<this.state.counterLimit; i++){
       if (this.state.turn === 'simon'){
-        console.log("turno de simon");
+        
         const timer =  setInterval(this._changeLight.bind(this), 500);
         this.setState({
           timer,
